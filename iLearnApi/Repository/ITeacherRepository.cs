@@ -9,7 +9,7 @@ namespace iLearnApi.Repository
     {
         Task<List<Teacher>> GetTeachers();
         Task<Teacher> GetTeacherById(int id);
-        Task<List<Teacher>> AddTeachers(Teacher teacher);
+        Task<Teacher> AddTeachers(Teacher teacher);
         Task<Teacher> UpdateTeachers(Teacher teacher);
         Task<Teacher> DeleteTeachers(Teacher teacher);
     }

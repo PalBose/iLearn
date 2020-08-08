@@ -59,7 +59,7 @@ namespace iLearnApi.Controllers
             try
             {
                 var teachers = await TeacherRepository.AddTeachers(teacher);
-                if (teachers != null && teachers.Any())
+                if (teachers != null)
                     return Ok(teachers);
                 else
                     return StatusCode(StatusCodes.Status503ServiceUnavailable);

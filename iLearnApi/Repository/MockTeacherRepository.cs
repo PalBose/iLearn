@@ -18,11 +18,11 @@ namespace iLearnApi.Repository
                 new Teacher(){ Id=2,Email="a1@b.c",FirstName="f2",LastName="l2", Skills= new List<Skill>(){ new Skill {ProficiencyLevel= Proficiency.Expert.ToString(),SkillName=Skills.Java.ToString()} } },
             };
         }
-        public async Task<List<Teacher>> AddTeachers(Teacher teacher)
+        public async Task<Teacher> AddTeachers(Teacher teacher)
         {
             this.teachers.Add(teacher);
             await Task.Delay(0000);
-            return this.teachers;
+            return teacher;
         }
 
         public async Task<Teacher> DeleteTeachers(Teacher teacher)
