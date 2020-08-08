@@ -14,9 +14,10 @@ namespace iLearnApi.Repository
     public class Skill
     {
         public int Id { get; set; }
-        public Skills SkillName { get; set; }
-        public Proficiency ProficiencyLevel { get; set; }
+        public string SkillName { get; set; }
+        public string ProficiencyLevel { get; set; }
     }
+
 
     public enum Skills
     {

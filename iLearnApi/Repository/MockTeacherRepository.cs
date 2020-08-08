@@ -20,8 +20,8 @@ namespace iLearnApi.Repository
         {
             teachers = new List<Teacher>()
             {
-                new Teacher(){ Id=1,Email="a@b.c",FirstName="f1",LastName="l1", Skills= new List<Skill>(){ new Skill {ProficiencyLevel= Proficiency.Expert,SkillName=Skills.AspNet} , new Skill { ProficiencyLevel = Proficiency.Expert, SkillName = Skills.Java } } },
-                new Teacher(){ Id=2,Email="a1@b.c",FirstName="f2",LastName="l2", Skills= new List<Skill>(){ new Skill {ProficiencyLevel= Proficiency.Expert,SkillName=Skills.Java} } },
+                new Teacher(){ Id=1,Email="a@b.c",FirstName="f1",LastName="l1", Skills= new List<Skill>(){ new Skill {ProficiencyLevel= Proficiency.Expert.ToString(),SkillName=Skills.AspNet.ToString()} , new Skill { ProficiencyLevel = Proficiency.Expert.ToString(), SkillName = Skills.Java.ToString() } } },
+                new Teacher(){ Id=2,Email="a1@b.c",FirstName="f2",LastName="l2", Skills= new List<Skill>(){ new Skill {ProficiencyLevel= Proficiency.Expert.ToString(),SkillName=Skills.Java.ToString()} } },
             };
         }
         public async Task<List<Teacher>> AddTeachers(Teacher teacher)
