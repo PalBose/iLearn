@@ -29,7 +29,7 @@ namespace iLearnApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContextPool<AppDbContext>(option=>option.UseSqlServer(Configuration.GetConnectionString("iLearnDb")));
-            services.AddSingleton<ITeacherRepository, MockTeacherRepository>();
+            services.AddScoped<ITeacherRepository, SqlTeacherRepository>();
             services.AddMvc();
         }
 
