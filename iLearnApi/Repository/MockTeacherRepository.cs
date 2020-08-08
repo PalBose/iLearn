@@ -5,13 +5,7 @@ using System.Threading.Tasks;
 
 namespace iLearnApi.Repository
 {
-    public interface ITeacherRepository
-    {
-        Task<List<Teacher>> GetTeachers();
-        Task<Teacher> GetTeacherById(int id);
-        Task<List<Teacher>> AddTeachers(Teacher teacher);
-    }
-
+ 
     public class MockTeacherRepository : ITeacherRepository
     {
         private readonly List<Teacher> teachers;
@@ -31,6 +25,15 @@ namespace iLearnApi.Repository
             return this.teachers;
         }
 
+        public async Task<Teacher> DeleteTeachers(Teacher teacher)
+        {
+            Teacher t = this.teachers.FirstOrDefault(x => x.Id == teacher.Id);
+            if (t != null)
+                this.teachers.Remove(t);
+            await Task.Delay(0000);
+            return teacher;
+        }
+
         public async Task<Teacher> GetTeacherById(int id)
         {
             await Task.Delay(0000);
@@ -41,6 +44,20 @@ namespace iLearnApi.Repository
         {
             await Task.Delay(0000);
             return this.teachers;
+        }
+
+        public async Task<Teacher> UpdateTeachers(Teacher teacher)
+        {
+            Teacher t = this.teachers.FirstOrDefault(x => x.Id == teacher.Id);
+            if (t != null)
+            {
+                t.FirstName = teacher.FirstName;
+                t.LastName = teacher.LastName;
+                t.Skills = teacher.Skills;
+                t.Email = teacher.Email;
+            }
+            await Task.Delay(0000);
+            return teacher;
         }
     }
 
